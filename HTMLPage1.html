@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="myModule">
+<head>
+    <meta charset="utf-8" />
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/script.js"></script>
+    <title></title>
+</head>
+<body >
+    <div>
+    {{ message }}  </div>
+    <div ng-controller="myController">
+       <div>
+           FirstName : {{ resident.firstName }}
+      </div>
+       <div>
+           LastName: {{ resident.lastName }}
+       </div>
+        <div>
+            Gender: {{ resident.gender }}
+        </div>
+        <div>
+            <img ng-src="{{ resident.flag }}" style="height:100px; width:200px;"/>
+            </div> 
+
+    </div>
+</body>
+</html>

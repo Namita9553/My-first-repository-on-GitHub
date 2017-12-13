@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" ng-app="Module">
+<head>
+    <meta charset="utf-8" />
+   
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/helpdesk.js"></script>
+    <style>
+        table{
+            border-collapse: collapse;
+            font-family: Arial;
+        }
+        td{
+            border: 1px solid black;
+            padding: 5px;
+        }
+        th{
+            border: 1px solid black;
+            padding: 5px;
+            text-align:left;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+    <div ng-controller="myController">
+       <ul>
+           Rows to display :
+           <input type="number" step="1" min="0" max="5" ng-model="rowLimit" />
+           <br />
+           <br />    
+           Order by :
+           <select ng-model="sortColumn" >
+               <option value="name">Name Asc</option>
+               <option value="name">Likes</option>
+               <option value="name">Dislikes</option>
+              
+           </select>
+           <br />
+           <br />
+           <li ng-repeat="provider in service_provider ">
+              {{ provider.profession }}
+               
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Availability</th>
+                          <th>Mobile</th>
+                          <th>Address</th>
+                          <th>Likes</th>
+                          <th>Dislikes</th>
+                          <th>Rate Provider</th>
+
+                      </tr>
+                  <tbody>
+                      <tr ng-repeat="detail in provider.details | orderBy: sortColumn |limitTo: rowLimit">
+                          <td>{{detail.name}}</td>
+                          <td>{{detail.availability}}</td>
+                          <td>{{detail.phone_no}}</td>
+                          <td>{{detail.address}}</td>
+                          <td>{{detail.likes}}</td>
+                          <td>{{detail.dislikes}}</td>
+                          <td>
+                              <input type="button" value="Like" ng-click="incrementLikes(detail)">
+                              <input type="button" value="Dislike" ng-click="incrementDislikes(detail)">
+                          </td>
+                      </tr>
+                  </tbody>
+
+              </table>
+           </li>
+
+       </ul>
+
+    </div>
+    
+</body>
+</html>

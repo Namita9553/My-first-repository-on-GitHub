@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule">
+
+<head>
+    <title></title>
+    <script src="scripts/angular.js"></script>
+   
+    <script src="scripts/helpdesk.js"></script>
+    <meta charset="utf-8" />
+    <style>
+        .dropbtn {
+   background-color: cornflowerblue;
+   color: white;
+   padding: 16px;
+   font-size: 16px;
+   border: solid;
+   cursor: pointer;
+   width:300px;
+   height:auto;
+}
+
+.dropdown {
+   position: relative;
+   display: inline-block;
+   border-top: 1px solid #BDC3C7;
+   width:inherit;
+
+}
+
+.dropdown-content {
+   display:none;
+   position: relative;
+   background-color: #f9f9f9;
+   min-width: inherit;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+   visibility:hidden;
+   position:absolute;
+   left:0%;
+   top:-5%;
+   visibility:hidden;
+
+
+}
+
+.dropdown-content a {
+   color: black;
+   padding: 12px 16px;
+    background-color: #f9f9f9;
+   text-decoration: none;
+   display: block;
+   position:relative;
+
+}
+.dropdown-content button {
+   color: silver;
+   padding: 12px 16px;
+    background-color: #f9f9f9;
+   text-decoration: none;
+   display: block;
+   position:relative;
+
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+   display: block;
+   position: relative;
+   visibility:visible;
+
+
+
+}
+
+.dropdown:hover .dropbtn {
+   background-color: gray;
+}
+
+/* Style the tab content */
+input[type=text] {
+   width: 300px;
+   padding: 12px 20px;
+   margin: 8px 0;
+   box-sizing: border-box;
+    border: 2px solid red;
+   border-radius: 4px;
+   position:absolute;
+}
+    </style>
+</head>
+<body>
+    <h2> ADMIN SIDE </h2>
+
+    <div class="dropdown">
+        <button class="dropbtn">Society data</button>
+        <div class="dropdown-content">
+            <a href="add.html">Add</a>
+            <a href="#">Delete</a>
+            <a href="#">Search</a>
+            <a href="#">Update</a>
+            <a href="#">Show</a>
+        </div>
+    </div>
+    <br />
+    <div class="dropdown">
+        <button class="dropbtn">Accounts</button>
+        <div class="dropdown-content">
+            <a href="#">Funds</a>
+            <a href="#">Bills</a>
+
+        </div>
+    </div>
+    <br>
+    <div class="dropdown">
+        <button class="dropbtn">Events</button>
+
+    </div>
+    <br>
+
+
+    <form action="helpdesk.html" method="get" target="_parent">
+        <button class="dropbtn" >Helpdesk</button>
+    </form>
+
+
+        <br>
+        <div class="dropdown">
+            <button class="dropbtn">Renting and selling</button>
+
+        </div>
+
+</body>
+</html>
+
